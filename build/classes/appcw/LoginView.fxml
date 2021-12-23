@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" prefHeight="680.0" prefWidth="1220.0" styleClass="login-bg" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appcw.LoginViewController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="644.0" prefWidth="940.0" stylesheets="@Styles.css">
+         <children>
+            <AnchorPane layoutX="416.0" layoutY="120.0" prefHeight="379.0" prefWidth="388.0" styleClass="login-bg-rightbox">
+               <effect>
+                  <DropShadow color="#1e0213" />
+               </effect>
+               <children>
+                  <TabPane fx:id="tabPaneLogin" layoutX="25.0" layoutY="123.0" prefHeight="241.0" prefWidth="344.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab fx:id="tabAdmin" text="ADMIN">
+                           <content>
+                              <AnchorPane prefHeight="244.0" prefWidth="344.0">
+                                 <children>
+                                    <JFXTextField fx:id="txtUsername" labelFloat="true" layoutX="27.0" layoutY="12.0" prefHeight="32.0" prefWidth="290.0" promptText="Admin Username">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></JFXTextField>
+                                    <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="27.0" layoutY="79.0" prefHeight="32.0" prefWidth="290.0" promptText="Admin Password">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></JFXPasswordField>
+                                    <JFXButton buttonType="RAISED" layoutX="112.0" layoutY="154.0" onAction="#LoginAdmin" prefHeight="35.0" prefWidth="119.0" styleClass="login-btn" text="LOGIN" />
+                                    <Label fx:id="lbCreateAccount" layoutX="75.0" layoutY="215.0" onMouseClicked="#openCreateAccount" text="New User? Create an account" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       
+                                    </Label>
+                                    <Label fx:id="error_adminUsername" layoutX="196.0" layoutY="6.0" textFill="RED" />
+                                    <Label fx:id="error_adminPassword" layoutX="196.0" layoutY="71.0" textFill="RED" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                      <Tab fx:id="tabUser" text="USER">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <JFXTextField fx:id="txtUsernameU" labelFloat="true" layoutX="27.0" layoutY="12.0" prefHeight="32.0" prefWidth="290.0" promptText="Username">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></JFXTextField>
+                                    <JFXPasswordField fx:id="txtPasswordU" labelFloat="true" layoutX="27.0" layoutY="79.0" prefHeight="32.0" prefWidth="290.0" promptText="Password">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></JFXPasswordField>
+                                    <JFXButton buttonType="RAISED" layoutX="112.0" layoutY="154.0" onAction="#LoginUser" prefHeight="35.0" prefWidth="119.0" styleClass="login-btn" text="LOGIN" />
+                                    <Label fx:id="lbCreateAccount1" layoutX="75.0" layoutY="215.0" onMouseClicked="#openCreateAccount" text="New User? Create an account" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       
+                                    </Label>
+                                    <Label fx:id="error_userUsername" layoutX="206.0" layoutY="16.0" textFill="RED" />
+                                    <Label fx:id="error_userPassword" layoutX="206.0" layoutY="81.0" textFill="RED" />
+                                 </children>
+                              </AnchorPane>
+                           </content></Tab>
+                    </tabs>
+                  </TabPane>
+                  <Group layoutX="18.0" layoutY="63.0">
+                     <children>
+                        <Pane fx:id="slidePane" layoutY="-31.0" prefHeight="40.0" prefWidth="346.0">
+                           <children>
+                              <Label fx:id="lbAdmin" onMouseClicked="#openAdminTab" prefHeight="40.0" prefWidth="150.0" styleClass="login-user" text="ADMIN">
+                                 
+                              </Label>
+                              <Label fx:id="lbUser" layoutX="196.0" onMouseClicked="#openUserTab" prefHeight="40.0" prefWidth="150.0" styleClass="login-user" text="USER">
+                                 
+                              </Label>
+                              <Label fx:id="lbStatus" prefHeight="40.0" prefWidth="150.0" styleClass="login-status" text="ADMIN">
+                                 
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Group>
+               </children>
+            </AnchorPane>
+            <Label fx:id="isConnected" layoutX="14.0" layoutY="650.0" text="Status" textFill="#2c7744" />
+         </children></AnchorPane>
+   </children>
+</StackPane>

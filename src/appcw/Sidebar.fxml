@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Author     : Abdi Ismail
+      -->
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="158.0" styleClass="sidebar" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appcw.SidebarController">
+   <children>
+      <Pane prefHeight="153.0" prefWidth="114.0" styleClass="sidebar" />
+      <Separator prefWidth="200.0" />
+      <Pane prefHeight="48.0" prefWidth="114.0">
+         <children>
+            <Button fx:id="btnDashbaord" mnemonicParsing="false" onAction="#openDashboard" prefHeight="28.0" prefWidth="158.0" styleClass="btns" text="Dashboard">
+               <graphic>
+                  <FontAwesomeIconView glyphName="HOME" size="20" styleClass="Label-sb" text="" wrappingWidth="30.0" />
+               </graphic>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" top="40.0" />
+         </VBox.margin>
+      </Pane>
+      <Pane prefHeight="48.0" prefWidth="114.0">
+         <children>
+            <Button fx:id="btnAccount" mnemonicParsing="false" onAction="#openAccount" prefHeight="50.0" prefWidth="158.0" styleClass="btns" text="Account">
+               <graphic>
+                  <FontAwesomeIconView glyphName="USERS" size="20" styleClass="Label-sb" text="" wrappingWidth="30.0" />
+               </graphic>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Pane>
+      <Pane prefHeight="48.0" prefWidth="186.0">
+         <children>
+            <Button fx:id="Admin" mnemonicParsing="false" onAction="#openAdmin" prefHeight="28.0" prefWidth="158.0" styleClass="btns" text="Admin">
+               <graphic>
+                  <FontAwesomeIconView glyphName="LOCK" size="20" styleClass="Label-sb" wrappingWidth="30.0" />
+               </graphic>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Pane>
+      <Pane prefHeight="48.0" prefWidth="186.0">
+         <children>
+            <Button fx:id="btnLogout1" mnemonicParsing="false" onAction="#openLogout" prefWidth="155.0" styleClass="btns" text="Logout">
+               <graphic>
+                  <FontAwesomeIconView glyphName="SIGN_OUT" size="20" styleClass="Label-sb" wrappingWidth="30.0" />
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Separator prefWidth="200.0">
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin>
+      </Separator>
+      <Button fx:id="closeButton" mnemonicParsing="false" onAction="#closeButtonAction" prefWidth="187.0" styleClass="btns" text="Exit">
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin></Button>
+   </children>
+</VBox>
